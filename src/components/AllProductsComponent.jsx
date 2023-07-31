@@ -1,19 +1,19 @@
 import React, { useContext } from "react";
 import { ApiContext } from "../context/ApiContext";
-import HeroComponent from "./HeroComponent";
+import { CartContext } from "../context/CartContext";
 import SearchComponent from "./SearchComponent";
 import CatergoryComponent from "./CatergoryComponent";
-import UserDetailsForm from "./FormComponent";
 
 const AllProductsComponent = () => {
   const { allProduct } = useContext(ApiContext);
+  const { addItemToCart } = useContext(CartContext);
+  console.log("rerebder");
   return (
     <main className="w-11/12 mx-auto">
       <>
-        <HeroComponent />
         <SearchComponent />
       </>
-
+      <h1 className="text-3xl ml-14 mt-10 font-semibold">Trending Products</h1>
       <section className="flex mt-5 flex-wrap justify-center">
         {allProduct?.map((dt) => (
           <div key={dt.id} className="p-2">
@@ -35,7 +35,7 @@ const AllProductsComponent = () => {
                   {dt.description} the biggest enterprise technology
                   acquisitions of 2021 so far.
                 </p>
-                <a
+                {/* <a
                   href="#"
                   className="inline-flex items-center px-8 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
                 >
@@ -55,7 +55,13 @@ const AllProductsComponent = () => {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </a> */}
+                <button
+                  onClick={() => addItemToCart(dt)}
+                  className="px-4 py-2 bg-red-600 text-white font-semibold hover:bg-gray-800 hover:text-white rounded-lg"
+                >
+                  Add To Cart
+                </button>
               </div>
             </div>
           </div>
