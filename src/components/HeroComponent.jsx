@@ -5,7 +5,7 @@ import HeroBG from "../Assets/hero-image.png";
 
 const HeroComponent = () => {
   return (
-    <section className=" h-[90vh]">
+    <section className="w-11/12 m-auto h-[90vh]">
       <div className="mt-10 flex flex-col lg:flex-row relative ">
         <div className="mt-10 tracking-wider z-20 text-slate-800 w-11/12 m-auto">
           <h1 className="mt-[60px] lg:mt-[150px] text-4xl lg:text-7xl font-extrabold ">

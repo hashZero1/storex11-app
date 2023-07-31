@@ -27,10 +27,10 @@ const CatergoryComponent = () => {
       <h1 className="text-3xl mb-5 font-semibold">Product categories</h1>
       {categories.map((dt) => (
         <button
-          className={`${
-            selectItem ? "active:bg-red-400 focus:bg-red-500" : "bg-red-200"
+          className={` ${
+            selectItem ? "active:bg-red-400 focus:bg-red-500" : "bg-red-200 "
           }
-          bg-red-200 capitalize rounded-lg m-2 px-5 py-3 text-2xl `}
+          bg-red-100 bg-opacity-50 capitalize rounded-lg m-2 px-5 py-3 text-2xl hover:bg-red-500 transition-all shadow-md`}
           key={dt.id}
           onClick={() => {
             fetchCategory();

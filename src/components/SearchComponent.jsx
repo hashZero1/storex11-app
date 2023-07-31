@@ -32,25 +32,17 @@ const SearchComponent = () => {
 
   return (
     <section className="lg:mt-20 lg:ml-12">
-      <h1 className="text-3xl font-semibold">Trending Products</h1>
-      {/* <Combobox value={selectedPerson} onChange={setSelectedPerson}>
-        <Combobox.Input onChange={handleChange} />
-        <Combobox.Options>
-          {filteredProduct.map((person) => (
-            <Combobox.Option key={person} value={person}>
-              {person}
-            </Combobox.Option>
-          ))}
-        </Combobox.Options>
-      </Combobox> */}
       <Combobox value={query} onChange={handleChange}>
-        <div className="relative w-full">
+        <div className="relative mt-6 w-full">
           <Combobox.Input
-            className="w-11/12 text-lg bg-gray-100 rounded-full px-5 py-3"
+            className=" w-4/6 text-2xl bg-white rounded-tl-lg rounded-bl-lg px-5 py-3"
             placeholder="Search products..."
             displayValue={query}
             onChange={handleChange}
           />
+          <button className="px-5 py-3 bg-red-600 text-white font-semibold hover:bg-gray-800 hover:text-white text-2xl rounded-tr-lg rounded-br-lg ">
+            Search
+          </button>
           <Transition
             as={Fragment}
             leave="transition ease-in duration-100"
@@ -59,17 +51,17 @@ const SearchComponent = () => {
             afterLeave={() => setQuery("")}
           >
             <Combobox.Options>
-              {filteredProduct.map((companies) => (
+              {filteredProduct.map((data) => (
                 <Combobox.Option
-                  key={companies}
+                  key={data}
                   className={({ active }) =>
                     `relative bg-gray-100 ${
                       active ? "bg-blue-500 text-white" : "text-gray-900"
                     }`
                   }
-                  value={companies}
+                  value={data}
                 >
-                  {companies}
+                  {data}
                 </Combobox.Option>
               ))}
             </Combobox.Options>
