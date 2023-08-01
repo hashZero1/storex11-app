@@ -13,7 +13,9 @@ const AllProductsComponent = () => {
       <>
         <SearchComponent />
       </>
-      <h1 className="text-3xl ml-14 mt-10 font-semibold">Trending Products</h1>
+      <h1 className="text-3xl ml-14 mt-10 font-semibold" id="discover">
+        Trending Products
+      </h1>
       <section className="flex mt-5 flex-wrap justify-center">
         {allProduct?.map((dt) => (
           <div key={dt.id} className="p-2">

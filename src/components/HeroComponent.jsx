@@ -3,6 +3,14 @@ import NavComponent from "./NavComponent";
 import Background from "../Assets/hero-bg.png";
 import HeroBG from "../Assets/hero-image.png";
 
+const handleScroll = () => {
+  const nextSection = document.getElementById("discover");
+
+  if (nextSection) {
+    nextSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 const HeroComponent = () => {
   return (
     <section className="w-11/12 m-auto h-[90vh]">
@@ -15,7 +23,10 @@ const HeroComponent = () => {
           <h2 className="mt-2 lg:mt-8 text-3xl lg:text-6xl font-bold capitalize">
             the only store you'll ever need...
           </h2>
-          <button className="mt-10 ml-2 px-12 py-4 rounded-full text-xl text-white font-semibold bg-red-600 hover:bg-gray-200 hover:text-black">
+          <button
+            onClick={handleScroll}
+            className="mt-10 ml-2 px-12 py-4 rounded-full text-xl text-white font-semibold bg-red-600 hover:bg-gray-200 hover:text-black"
+          >
             Browse Products
           </button>
         </div>
