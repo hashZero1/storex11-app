@@ -15,25 +15,25 @@ export const Cart = ({ toggle, handleToggle }) => {
       exit={{ opacity: 0, x: 200 }}
       className="fixed w-screen h-screen -top-10 -right-8 xl:top-10 xl:right-0 z-50 xl:w-1/3 xl:h-[90vh]  overflow-y-scroll no-scrollbar"
     >
-      <div>
-        <div className="fixed p-2 mt-10 z-10 right-[21.2em] lg:right-[23.5em] xl:mt-0 xl:right-[25.2em] bg-red-100 opacity-90 rounded-tl-xl rounded-bl-xl shadow-md">
-          <svg
-            onClick={() => handleToggle(!toggle)}
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="cursor-pointer text-black rounded-full w-10 h-10"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-        </div>
-        <div className="m-10 p-4 left-0 absolute xl:absolute xl:-top-20 xl:left-[190px] xl:w-[400px] bg-red-100 bg-opacity-90 rounded-br-xl rounded-bl-xl transition-all shadow-md">
+      <div className="relative">
+        <div className="m-10 mt-10 p-4 left-0 absolute xl:mt-20 xl:absolute xl:-top-20 xl:left-[190px] xl:w-[400px] bg-red-100 bg-opacity-90 rounded-br-xl rounded-bl-xl transition-all shadow-md">
+          <div className="absolute p-2 top-0 left-0 xl:-left-14 lg:bg-red-100 bg-transparent opacity-90 rounded-tl-xl rounded-bl-xl">
+            <svg
+              onClick={() => handleToggle(!toggle)}
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="cursor-pointer text-black rounded-full w-10 h-10"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </div>
           {cartItems.length === 0 ? (
             <div className="mt-10 text-xl" key={uuid()}>
               <h1 className="p-2 mt-2 font-semibold text-xl">
