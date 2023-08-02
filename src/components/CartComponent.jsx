@@ -13,10 +13,10 @@ export const Cart = ({ toggle, handleToggle }) => {
       initial={{ opacity: 0, x: 200 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 200 }}
-      className="fixed w-3/5 h-4/5 -top-10 -right-8 xl:top-10 xl:right-0 z-50 xl:w-1/3 xl:h-[90vh] overflow-y-scroll no-scrollbar"
+      className="fixed w-screen h-screen -top-10 -right-8 xl:top-10 xl:right-0 z-50 xl:w-1/3 xl:h-[90vh]  overflow-y-scroll no-scrollbar"
     >
       <div>
-        <div className="fixed p-2 right-[23.5em] xl:right-[25.2em] bg-red-100 opacity-90 rounded-tl-xl rounded-bl-xl shadow-md">
+        <div className="fixed p-2 mt-10 z-10 right-[21.2em] lg:right-[23.5em] xl:mt-0 xl:right-[25.2em] bg-red-100 opacity-90 rounded-tl-xl rounded-bl-xl shadow-md">
           <svg
             onClick={() => handleToggle(!toggle)}
             xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ export const Cart = ({ toggle, handleToggle }) => {
             />
           </svg>
         </div>
-        <div className="m-10 p-4 xl:absolute xl:-top-20 xl:left-[190px] xl:w-[400px] bg-red-100 bg-opacity-90 rounded-xl transition-all shadow-md">
+        <div className="m-10 p-4 left-0 absolute xl:absolute xl:-top-20 xl:left-[190px] xl:w-[400px] bg-red-100 bg-opacity-90 rounded-br-xl rounded-bl-xl transition-all shadow-md">
           {cartItems.length === 0 ? (
             <div className="mt-10 text-xl" key={uuid()}>
               <h1 className="p-2 mt-2 font-semibold text-xl">
@@ -45,7 +45,7 @@ export const Cart = ({ toggle, handleToggle }) => {
               </p>
             </div>
           ) : (
-            <div className="pt-10">
+            <div className="pt-10 w-[74vw] xl:w-full">
               <div className="">
                 <Checkout />
               </div>
