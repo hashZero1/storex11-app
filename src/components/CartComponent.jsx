@@ -9,15 +9,14 @@ export const Cart = ({ toggle, handleToggle }) => {
     useContext(CartContext);
 
   return (
-    <aside
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.75, ease: "easeOut" }}
-      className=" fixed top-10 right-0 z-50 w-1/3 h-[90vh] overflow-y-scroll no-scrollbar"
+    <m.aside
+      initial={{ opacity: 0, x: 200 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 200 }}
+      className="fixed w-3/5 h-4/5 -top-10 -right-8 xl:top-10 xl:right-0 z-50 xl:w-1/3 xl:h-[90vh] overflow-y-scroll no-scrollbar"
     >
       <div>
-        <div className="fixed p-2 right-[25.2em] bg-red-100 opacity-90 rounded-tl-xl rounded-bl-xl shadow-md">
+        <div className="fixed p-2 right-[23.5em] xl:right-[25.2em] bg-red-100 opacity-90 rounded-tl-xl rounded-bl-xl shadow-md">
           <svg
             onClick={() => handleToggle(!toggle)}
             xmlns="http://www.w3.org/2000/svg"
@@ -34,9 +33,9 @@ export const Cart = ({ toggle, handleToggle }) => {
             />
           </svg>
         </div>
-        <div className="m-10 p-4 absolute -top-20 left-[190px] w-[400px] bg-red-100 bg-opacity-90 rounded-lg transition-all shadow-md">
+        <div className="m-10 p-4 xl:absolute xl:-top-20 xl:left-[190px] xl:w-[400px] bg-red-100 bg-opacity-90 rounded-xl transition-all shadow-md">
           {cartItems.length === 0 ? (
-            <div className="mt-10 text-lg" key={uuid()}>
+            <div className="mt-10 text-xl" key={uuid()}>
               <h1 className="p-2 mt-2 font-semibold text-xl">
                 Your StoreX-11 Cart is empty.
               </h1>
@@ -56,13 +55,13 @@ export const Cart = ({ toggle, handleToggle }) => {
 
                 return (
                   <div
-                    className="flex flex-col mx-2 my-4 p-2 bg-red-200 shadow-md rounded-lg"
+                    className="flex flex-col mx-2 my-4 p-2 bg-red-200 shadow-md rounded-xl"
                     key={id}
                   >
                     <div className="flex">
                       <div className="m-4 w-64 object-contain">
                         <img
-                          className="w-full rounded-lg object-fill"
+                          className="w-full rounded-xl object-fill"
                           src={images[0]}
                           alt={images}
                         />
@@ -93,7 +92,7 @@ export const Cart = ({ toggle, handleToggle }) => {
                       </div>
                       <button
                         onClick={() => deleteItemCart(item)}
-                        className="px-5 bg-black text-white font-semibold hover:bg-gray-100 hover:text-black rounded-lg"
+                        className="px-5 bg-black text-white font-semibold hover:bg-gray-100 hover:text-black rounded-xl"
                       >
                         Delete
                       </button>
@@ -105,7 +104,7 @@ export const Cart = ({ toggle, handleToggle }) => {
           )}
         </div>
       </div>
-    </aside>
+    </m.aside>
   );
 };
 
