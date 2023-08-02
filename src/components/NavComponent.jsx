@@ -9,16 +9,16 @@ const NavComponent = () => {
 
   return (
     <nav>
-      <div className="pt-10 max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="pt-10 max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <a href="#" className="flex items-center">
           <img
             src="https://i.ibb.co/bPG5Y9K/logo-no-background.png"
-            className="h-10 mr-3"
+            className="h-8 my-1 xl:h-10 xl:mr-3"
             alt="Logo"
           />
         </a>
-        <div className="flex w-60 justify-between">
-          <button className="px-10 py-2 rounded-lg text-white font-semibold bg-red-600 hover:bg-gray-200 hover:text-black">
+        <div className="flex w-44 xl:w-60 justify-between">
+          <button className="px-5 py-2 text-sm xl:text-base xl:px-10 xl:py-2 rounded-lg text-white font-semibold bg-red-600 hover:bg-gray-200 hover:text-black">
             Sign IN
           </button>
           <div>
@@ -40,7 +40,7 @@ const NavComponent = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="p-1 w-10 h-10"
+                  className="p-2 xl:p-1 w-10 h-10"
                 >
                   <path
                     strokeLinecap="round"
@@ -48,7 +48,7 @@ const NavComponent = () => {
                     d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
                   />
                 </svg>
-                <span className="font-bold px-1 mt-2 text-xl cursor-pointer">
+                <span className="font-bold  mt-[5px] xl:mt-2 text-lg xl:text-xl cursor-pointer">
                   {cartItems.length}
                 </span>
               </motion.div>
