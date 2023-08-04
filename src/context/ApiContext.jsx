@@ -5,11 +5,10 @@ export const ApiContext = createContext();
 
 export const ApiProvider = ({ children }) => {
   const [allProduct, setProducts] = useState(null);
-  const [searchProducts, setsearchProducts] = useState(null);
+  const [searchProducts, setsearchProducts] = useState([]);
   const [category, setCategory] = useState(null);
-  const [product, setProduct] = useState(null);
+
   const [selectItem, setSelectItem] = useState(null);
-  const empty = [];
 
   useEffect(() => {
     async function fetchData() {
@@ -23,12 +22,12 @@ export const ApiProvider = ({ children }) => {
   }, []);
 
   //for Search product
-  const searchProduct = async () => {
+  const searchCategory = async () => {
     try {
       const response = await axios.get(
-        `https://dummyjson.com/products/search?q=${product}`
+        `https://dummyjson.com/products/search?q=${searchProducts}`
       );
-      setProduct(response.data.products);
+      setsearchProducts(response.data);
     } catch (e) {
       alert("sorry item is not available");
     }
@@ -45,9 +44,8 @@ export const ApiProvider = ({ children }) => {
 
   const value = {
     allProduct,
-    product,
-    setProduct,
-    searchProduct,
+    searchCategory,
+    searchProducts,
     setsearchProducts,
     category,
     fetchCategory,
