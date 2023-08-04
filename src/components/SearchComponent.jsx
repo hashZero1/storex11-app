@@ -16,7 +16,7 @@ const product = [
 
 const SearchComponent = () => {
   const { searchProducts } = useContext(ApiContext);
-  const [selectedPerson, setSelectedPerson] = useState(product[0]);
+  const [selectedPerson, setSelectedPerson] = useState(product);
   const [query, setQuery] = useState("");
 
   const filteredProduct =
@@ -32,7 +32,7 @@ const SearchComponent = () => {
 
   return (
     <section className="lg:mt-20 lg:ml-12">
-      <Combobox value={query} onChange={handleChange}>
+      <Combobox value={selectedPerson} onChange={setSelectedPerson}>
         <div className="relative mt-6 w-full">
           <Combobox.Input
             className=" w-4/6 text-2xl bg-white rounded-tl-lg rounded-bl-lg px-5 py-3"
@@ -50,13 +50,15 @@ const SearchComponent = () => {
             leaveTo="opacity-0"
             afterLeave={() => setQuery("")}
           >
-            <Combobox.Options>
+            <Combobox.Options className="mt-2">
               {filteredProduct.map((data) => (
                 <Combobox.Option
                   key={data}
                   className={({ active }) =>
-                    `relative bg-gray-100 ${
-                      active ? "bg-blue-500 text-white" : "text-gray-900"
+                    `relative text-lg px-5 py-2 w-4/6 capitalize bg-white ${
+                      active
+                        ? "bg-red-500 cursor-pointer text-white"
+                        : "text-gray-900"
                     }`
                   }
                   value={data}
