@@ -9,7 +9,7 @@ const SearchResult = ({ searchProduct }) => {
 
   return (
     <>
-      {searchProduct ? (
+      {searchProduct.products ? (
         <section>
           <h1 className="text-3xl ml-14 mt-10 font-semibold" id="discover">
             Search Result
