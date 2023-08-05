@@ -1,11 +1,29 @@
 import React, { useContext, useState } from "react";
 import CartContainer, { Cart } from "./CartComponent";
 import { CartContext } from "../context/CartContext";
+import { AuthContext } from "../context/AuthContext";
+import {
+  createUserDocumentFromAuth,
+  signInWithGooglePopup,
+  signOutUser,
+} from "../Firebase/Firebase.config";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const NavComponent = () => {
   const [toggle, setToggle] = useState(true);
   const { cartItems } = useContext(CartContext);
+  const { currentUser, setCurrentUser } = useContext(AuthContext);
+
+  const signInWithGoogle = async () => {
+    const { user } = await signInWithGooglePopup();
+    await createUserDocumentFromAuth(user);
+  };
+
+  const signOutHandler = async () => {
+    await signOutUser();
+    setCurrentUser(null);
+  };
 
   return (
     <nav>
@@ -18,9 +36,24 @@ const NavComponent = () => {
           />
         </a>
         <div className="flex w-44 xl:w-60 justify-between">
-          <button className="px-5 py-2 text-sm xl:text-base xl:px-10 xl:py-2 rounded-lg text-white font-semibold bg-red-600 hover:bg-gray-200 hover:text-black">
-            Sign IN
-          </button>
+          {currentUser ? (
+            <Link
+              className="px-5 py-2 text-sm xl:text-base xl:px-10 xl:py-2 rounded-lg text-white font-semibold bg-red-600 hover:bg-gray-200 hover:text-black transition-all"
+              onClick={signOutHandler}
+              to="/"
+            >
+              SignOut
+            </Link>
+          ) : (
+            <Link
+              onClick={signInWithGoogle}
+              className="px-5 py-2 text-sm xl:text-base xl:px-10 xl:py-2 rounded-lg text-white font-semibold bg-red-600 hover:bg-gray-200 hover:text-black transition-all"
+              to="/"
+            >
+              SignIn
+            </Link>
+          )}
+          <div>
           <div>
             {toggle ? (
               <motion.div
