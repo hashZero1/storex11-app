@@ -1,4 +1,10 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import axios from "axios";
 
 export const ApiContext = createContext();
@@ -34,13 +40,13 @@ export const ApiProvider = ({ children }) => {
   };
 
   //for categories
-  const fetchCategory = async () => {
+  const fetchCategory = useMemo(async () => {
     const response = await axios.get(
       `https://dummyjson.com/products/category/${selectItem || "mens-watches"}`
     );
 
     setCategory(response.data.products);
-  };
+  }, [selectItem]);
 
   const value = {
     allProduct,
