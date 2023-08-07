@@ -3,10 +3,11 @@ import { CartContext } from "../context/CartContext";
 import { useParams, useSearchParams } from "react-router-dom";
 
 const SearchResult = ({ searchProduct }) => {
-  // const { id } = useSearchParams();
+  const { id } = useSearchParams();
   // const searchDetails = searchProduct.find((pd) => pd.id === parseInt(id));
   const { addItemToCart } = useContext(CartContext);
-
+  const currentPath = window.location.pathname === `/search/:${id}`;
+  console.log(currentPath);
   return (
     <>
       {searchProduct.products ? (

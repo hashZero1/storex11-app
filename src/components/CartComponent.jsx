@@ -13,7 +13,7 @@ export const Cart = ({ toggle, handleToggle }) => {
       initial={{ opacity: 0, x: 200 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 200 }}
-      className="fixed w-screen h-screen -top-10 -right-8 xl:top-10 xl:right-0 z-50 xl:w-1/3 xl:h-[90vh]  overflow-y-scroll no-scrollbar"
+      className="fixed w-screen h-screen  -top-10 -right-8 xl:top-10 xl:right-0 z-50 xl:w-1/3 xl:h-[90vh]  overflow-y-scroll no-scrollbar"
     >
       <div className="relative">
         <div className="m-10 mt-10 p-4 left-0 absolute xl:mt-20 xl:absolute xl:-top-20 xl:left-[190px] xl:w-[400px] bg-red-100 bg-opacity-90 rounded-br-xl rounded-bl-xl transition-all shadow-md">

@@ -19,7 +19,6 @@ const product = [
 const SearchComponent = () => {
   const { searchProducts, searchCategory, setsearchProducts } =
     useContext(ApiContext);
-  const [selectedProduct, setSelectedProduct] = useState(product);
   const [query, setQuery] = useState("");
 
   const filteredProduct =
@@ -45,7 +44,7 @@ const SearchComponent = () => {
           />
           <Link
             onClick={() => searchCategory()}
-            to={`/search/${searchProducts}`}
+            to={`/search/:${searchProducts}`}
             className="px-5 py-3 bg-red-600 text-white font-semibold hover:bg-gray-800 hover:text-white text-2xl rounded-tr-lg rounded-br-lg "
           >
             Search
@@ -78,28 +77,6 @@ const SearchComponent = () => {
           </Transition>
         </div>
       </Combobox>
-      {/* <form className="relative lg:w-2/4  bg-gray-100 m-4 py-2 px-4 border-2 border-gray-400 rounded-lg">
-        <input
-          className="focus:outline-0 text-lg lg:w-11/12 h-8 bg-gray-100 "
-          value={value}
-          onChange={handleChange}
-          placeholder="search products..."
-        />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          className="absolute top-[12px] text-gray-400 left-[330px] lg:left-[50em] w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-          />
-        </svg>
-      </form> */}
       <div>
         <SearchResult searchProduct={searchProducts} />
       </div>

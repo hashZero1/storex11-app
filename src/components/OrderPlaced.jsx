@@ -1,10 +1,10 @@
 import React from "react";
-import delivery from "../img/delivery.gif";
+import delivery from "../Assets/delivery.gif";
 import { Link } from "react-router-dom";
 const OrderPlaced = () => {
   return (
     <div className="w-full md:h-[calc(100vh-210px)]  h-[calc(100vh-166px)] flex  flex-col items-center">
-      <img className="md:h-[66%]" src={delivery} />
+      <img className="md:h-[66%]" src={delivery} alt="orderplaced" />
       <h1 className="font-extrabold md:text-[2rem] text-center">
         Order Placed Successfully
       </h1>
