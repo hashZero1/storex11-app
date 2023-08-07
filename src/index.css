@@ -8,24 +8,19 @@
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
-    /* .yes-scrollbar::-webkit-scrollbar {
-      width: 10px;
+    html::-webkit-scrollbar {
       background-color: #f5f5f5;
     }
 
-    .yes-scrollbar::-webkit-scrollbar-thumb {
-      background-color: #f90;
-      background-image: -webkit-linear-gradient(
-        45deg,
-        rgba(255, 255, 255, 0.2) 25%,
-        transparent 25%,
-        transparent 50%,
-        rgba(255, 255, 255, 0.2) 50%,
-        rgba(255, 255, 255, 0.2) 75%,
-        transparent 75%,
-        transparent
+    html::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: linear-gradient(
+        180deg,
+        rgba(193, 87, 255, 1) 0%,
+        rgba(255, 23, 79, 1) 52%,
+        rgba(255, 171, 17, 1) 100%
       );
-    } */
+    }
 
     .yes-scrollbar::-webkit-scrollbar-track {
       border-radius: 10px;
