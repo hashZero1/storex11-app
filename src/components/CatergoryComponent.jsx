@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { ApiContext } from "../context/ApiContext";
 import { CartContext } from "../context/CartContext";
+import { motion } from "framer-motion";
 
 const categories = [
   "mens-watches",
@@ -32,11 +33,13 @@ const CatergoryComponent = () => {
   return (
     <div className="w-11/12 mx-auto mt-20 ">
       <h1 className="text-3xl ml-14 mb-5 font-semibold">Product categories</h1>
-      <div className="w-11/12 pb-4 mx-auto flex overflow-x-scroll yes-scrollbar">
+      <div className=" pb-4 mx-auto flex overflow-x-scroll yes-scrollbar">
         {categories.map((dt) => (
-          <button
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             className={` ${
-              selectItem ? "active:bg-red-400 focus:bg-red-500" : "bg-red-200 "
+              selectItem ? "active:bg-red-400 focus:bg-red-600" : "bg-red-200 "
             }
            bg-red-100 bg-opacity-50 capitalize rounded-lg m-2 px-5 py-4 text-2xl hover:bg-red-500 whitespace-nowrap transition-all shadow-md `}
             key={dt.id}
@@ -45,7 +48,7 @@ const CatergoryComponent = () => {
             }}
           >
             {dt}
-          </button>
+          </motion.button>
         ))}
       </div>
 
@@ -54,7 +57,11 @@ const CatergoryComponent = () => {
           <>
             <div className="flex mt-10 flex-wrap justify-center">
               {category?.map((dt) => (
-                <div key={dt.id} className="p-2">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  key={dt.id}
+                  className="p-2"
+                >
                   <div className="max-w-sm  m-2 bg-opacity-50 bg-white rounded-lg shadow ">
                     <div className="p-4 rounded-t-lg bg-white">
                       <img
@@ -82,7 +89,7 @@ const CatergoryComponent = () => {
                       </button>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </>
