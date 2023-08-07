@@ -1,13 +1,16 @@
-import React, { useContext } from "react";
+import React, { memo, useContext } from "react";
+import SearchComponent from "./SearchComponent";
 import { ApiContext } from "../context/ApiContext";
 import { CartContext } from "../context/CartContext";
-import SearchComponent from "./SearchComponent";
-import CatergoryComponent from "./CatergoryComponent";
+import { motion } from "framer-motion";
+import { Drawer } from "vaul";
+import { ToastContainer } from "react-toastify";
+import DetailsPageComponent from "./DetailsPageComponent";
 
 const AllProductsComponent = () => {
   const { allProduct } = useContext(ApiContext);
   const { addItemToCart } = useContext(CartContext);
-  console.log("rerebder");
+  console.log("all products re-render");
   return (
     <main className="w-11/12 mx-auto">
       <>
@@ -18,7 +21,7 @@ const AllProductsComponent = () => {
       </h1>
       <section className="flex mt-5 flex-wrap justify-center">
         {allProduct?.map((dt) => (
-          <div key={dt.id} className="p-2">
+          <motion.div whileHover={{ scale: 1.02 }} key={dt.id} className="p-2">
             <div className="max-w-sm  m-2 bg-opacity-50 bg-white rounded-lg shadow ">
               <div className="p-4 rounded-t-lg bg-white">
                 <img
@@ -28,7 +31,7 @@ const AllProductsComponent = () => {
                 />
               </div>
 
-              <div className="h-60 p-5">
+              <div className="p-5">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-700">
                   {dt.title}
                 </h5>
@@ -37,41 +40,23 @@ const AllProductsComponent = () => {
                   {dt.description} the biggest enterprise technology
                   acquisitions of 2021 so far.
                 </p>
-                {/* <a
-                  href="#"
-                  className="inline-flex items-center px-8 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-                >
-                  Details
-                  <svg
-                    className="w-3.5 h-3.5 ml-2"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 10"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5h12m0 0L9 1m4 4L9 9"
-                    />
-                  </svg>
-                </a> */}
+
+                {/* <DetailsPageComponent product={dt} /> */}
+
                 <button
                   onClick={() => addItemToCart(dt)}
-                  className="px-4 py-2 bg-red-600 text-white font-semibold hover:bg-gray-800 hover:text-white rounded-lg"
+                  className="px-4 py-2 my-2 bg-red-600 text-white font-semibold hover:bg-gray-800 hover:text-white transition-all rounded-lg"
                 >
                   Add To Cart
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
+        <ToastContainer />
       </section>
-      <CatergoryComponent />
     </main>
   );
 };
 
-export default AllProductsComponent;
+export default memo(AllProductsComponent);
