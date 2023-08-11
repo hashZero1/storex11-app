@@ -72,7 +72,6 @@ export const CartProvider = ({ children }) => {
   //adding or removing item to cart using helper function
   const addItemToCart = (productToAdd) => {
     setCartItems(addCartItem(cartItems, productToAdd));
-    notify();
   };
   const removeItemToCart = (productToRemove) => {
     setCartItems(removeCartItem(cartItems, productToRemove));
@@ -85,6 +84,7 @@ export const CartProvider = ({ children }) => {
     addItemToCart,
     cartItems,
     cartTotal,
+    notify,
     removeItemToCart,
     deleteItemCart,
   };
