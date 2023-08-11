@@ -9,7 +9,7 @@ import DetailsPageComponent from "./DetailsPageComponent";
 
 const AllProductsComponent = () => {
   const { allProduct } = useContext(ApiContext);
-  const { addItemToCart } = useContext(CartContext);
+  const { addItemToCart, notify } = useContext(CartContext);
   console.log("all products re-render");
   return (
     <main className="w-11/12 mx-auto">
@@ -44,7 +44,10 @@ const AllProductsComponent = () => {
                 {/* <DetailsPageComponent product={dt} /> */}
 
                 <button
-                  onClick={() => addItemToCart(dt)}
+                  onClick={() => {
+                    addItemToCart(dt);
+                    notify();
+                  }}
                   className="px-4 py-2 my-2 bg-red-600 text-white font-semibold hover:bg-gray-800 hover:text-white transition-all rounded-lg"
                 >
                   Add To Cart

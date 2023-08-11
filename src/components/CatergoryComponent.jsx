@@ -23,7 +23,7 @@ const categories = [
 
 const CatergoryComponent = () => {
   const { category, selectItem, setSelectItem } = useContext(ApiContext);
-  const { addItemToCart } = useContext(CartContext);
+  const { addItemToCart, notify } = useContext(CartContext);
 
   const handleItemClick = (item) => {
     setSelectItem(item);
@@ -82,7 +82,10 @@ const CatergoryComponent = () => {
                       </p>
 
                       <button
-                        onClick={() => addItemToCart(dt)}
+                        onClick={() => {
+                          addItemToCart(dt);
+                          notify();
+                        }}
                         className="px-4 py-2 bg-red-600 text-white font-semibold hover:bg-gray-800 hover:text-white rounded-lg"
                       >
                         Add To Cart
