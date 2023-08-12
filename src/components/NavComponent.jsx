@@ -26,7 +26,7 @@ const NavComponent = () => {
   };
 
   return (
-    <nav>
+    <nav className="lg:w-11/12 mx-auto">
       <div className="pt-10 max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <a href="#" className="flex items-center">
           <img

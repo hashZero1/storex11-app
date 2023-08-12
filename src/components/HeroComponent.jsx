@@ -16,7 +16,7 @@ const HeroComponent = () => {
     <section className="xl:w-4/5 m-auto h-[90vh]">
       <div className="xl:mx-10 xl:mt-5 flex flex-col justify-between lg:flex-row  ">
         <div className="mt-5 xl:mt-10 tracking-wider text-slate-800 w-11/12 m-auto">
-          <h1 className="mt-[60px] text-4xl lg:mt-[150px] xl:text-7xl font-extrabold ">
+          <h1 className="mt-[60px] text-4xl lg:mt-[50px] 2xl:mt-[150px] xl:text-7xl font-extrabold ">
             Welcome to,{" "}
             <span className="text-red-600 text-6xl xl:text-7xl uppercase">
               store-X11
@@ -32,7 +32,7 @@ const HeroComponent = () => {
             Browse Products
           </button>
         </div>
-        <div className="xl:mt-20 w-11/12 xl:w-[70%]  m-auto">
+        <div className="lg:mt-10 2xl:mt-20 w-11/12 xl:w-[70%]  m-auto">
           <img src={HeroBG} alt="heroimage" />
         </div>
       </div>
