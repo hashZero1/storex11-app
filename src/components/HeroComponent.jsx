@@ -1,6 +1,4 @@
 import React from "react";
-import NavComponent from "./NavComponent";
-import Background from "../Assets/hero-bg.png";
 import HeroBG from "../Assets/hero-image.png";
 
 const handleScroll = () => {
@@ -13,7 +11,7 @@ const handleScroll = () => {
 
 const HeroComponent = () => {
   return (
-    <section className="xl:w-4/5 m-auto h-[90vh]">
+    <section className="xl:w-4/5 m-auto lg:h-[90vh]">
       <div className="xl:mx-10 xl:mt-5 flex flex-col justify-between lg:flex-row  ">
         <div className="mt-5 xl:mt-10 tracking-wider text-slate-800 w-11/12 m-auto">
           <h1 className="mt-[60px] text-4xl lg:mt-[50px] 2xl:mt-[150px] xl:text-7xl font-extrabold ">

@@ -13,9 +13,7 @@ const AllProductsComponent = () => {
   console.log("all products re-render");
   return (
     <main className="w-11/12 mx-auto">
-      <>
-        <SearchComponent />
-      </>
+      <SearchComponent />
       <h1 className="text-3xl ml-14 mt-10 font-semibold" id="discover">
         Trending Products
       </h1>
@@ -25,24 +23,20 @@ const AllProductsComponent = () => {
             <div className="max-w-sm m-2 lg:m-0 2xl:m-2 bg-opacity-50 bg-white rounded-lg shadow ">
               <div className="p-4 rounded-t-lg bg-white">
                 <img
-                  className=" w-full h-48 object-contain"
+                  className="w-full h-48 object-contain"
                   src={dt.images[0]}
-                  alt=""
+                  alt={dt.title}
                 />
               </div>
-
-              <div className="p-5">
+              <div className="min-h-min p-5">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-700">
                   {dt.title}
                 </h5>
-
                 <p className="mb-3 h-[105px] font-normal text-gray-700 dark:text-gray-600">
                   {dt.description} the biggest enterprise technology
                   acquisitions of 2021 so far.
                 </p>
-
                 {/* <DetailsPageComponent product={dt} /> */}
-
                 <button
                   onClick={() => {
                     addItemToCart(dt);
