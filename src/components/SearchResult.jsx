@@ -19,7 +19,7 @@ const SearchResult = ({ searchProduct }) => {
           <div className="flex mt-5 flex-wrap justify-center">
             {searchProduct.products?.map((dt) => (
               <div key={dt.id} className="p-2">
-                <div className="max-w-sm  m-2 bg-opacity-50 bg-white rounded-lg shadow ">
+                <div className="max-w-sm m-2 lg:m-0 2xl:m-2 bg-opacity-50 bg-white rounded-lg shadow ">
                   <div className="p-4 rounded-t-lg bg-white">
                     <img
                       className=" w-full h-48 object-contain"
