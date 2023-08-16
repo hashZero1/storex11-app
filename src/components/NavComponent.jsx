@@ -9,6 +9,7 @@ import {
 } from "../Firebase/Firebase.config";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import UserProfile from "./UserProfile";
 
 const NavComponent = () => {
   const [toggle, setToggle] = useState(true);
@@ -28,7 +29,7 @@ const NavComponent = () => {
   return (
     <nav className="lg:w-11/12 mx-auto">
       <div className="pt-10 max-w-screen-xl flex items-center justify-between mx-auto p-4">
-        <a href="#" className="flex items-center">
+        <a href="/" className="flex items-center">
           <img
             src="https://i.ibb.co/bPG5Y9K/logo-no-background.png"
             className="h-8 my-1 xl:h-10 xl:mr-3"
@@ -37,13 +38,7 @@ const NavComponent = () => {
         </a>
         <div className="flex w-44 xl:w-60 justify-between">
           {currentUser ? (
-            <Link
-              className="px-5 py-2 text-sm xl:text-base xl:px-10 xl:py-2 rounded-lg text-white font-semibold bg-red-600 hover:bg-gray-200 hover:text-black transition-all"
-              onClick={signOutHandler}
-              to="/"
-            >
-              SignOut
-            </Link>
+            <UserProfile signOutHandler={signOutHandler} />
           ) : (
             <Link
               onClick={signInWithGoogle}
