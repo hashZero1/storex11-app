@@ -5,6 +5,8 @@ import { Avatar, Dropdown } from "flowbite-react";
 
 export default function UserProfile({ signOutHandler }) {
   const { currentUser } = useContext(AuthContext);
+
+  const reload = () => window.location.reload();
   return (
     <>
       <Dropdown
@@ -25,7 +27,10 @@ export default function UserProfile({ signOutHandler }) {
 
         <Link
           className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-          onClick={signOutHandler}
+          onClick={() => {
+            signOutHandler();
+            reload();
+          }}
           to="/"
         >
           SignOut
