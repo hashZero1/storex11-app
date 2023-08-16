@@ -36,7 +36,7 @@ const NavComponent = () => {
             alt="Logo"
           />
         </a>
-        <div className="flex w-44 xl:w-60 justify-between">
+        <div className="flex w-40 xl:w-56 justify-between">
           {currentUser ? (
             <UserProfile signOutHandler={signOutHandler} />
           ) : (
