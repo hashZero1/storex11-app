@@ -17,8 +17,12 @@ const NavComponent = () => {
   const { currentUser, setCurrentUser } = useContext(AuthContext);
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    try {
+      const { user } = await signInWithGooglePopup();
+      await createUserDocumentFromAuth(user);
+    } catch (err) {
+      alert("Error! (Login popup closed unexpectedly)");
+    }
   };
 
   const signOutHandler = async () => {
