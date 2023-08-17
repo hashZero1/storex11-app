@@ -3,11 +3,12 @@ import { CartContext } from "../context/CartContext";
 import uuid from "react-uuid";
 import Checkout from "./CheckoutComponent";
 import { motion as m } from "framer-motion";
+import { AuthContext } from "../context/AuthContext";
 
 export const Cart = ({ toggle, handleToggle }) => {
   const { cartItems, deleteItemCart, addItemToCart, removeItemToCart } =
     useContext(CartContext);
-
+  const { currentUser } = useContext(AuthContext);
   return (
     <m.aside
       initial={{ opacity: 0, x: 200 }}
@@ -37,6 +38,9 @@ export const Cart = ({ toggle, handleToggle }) => {
           {cartItems.length === 0 ? (
             <div className="mt-10 text-xl" key={uuid()}>
               <h1 className="p-2 mt-2 font-semibold text-xl">
+                {currentUser ? (
+                  <h1 className="text-2xl">{currentUser.displayName}</h1>
+                ) : null}
                 Your StoreX-11 Cart is empty.
               </h1>
               <p className="p-2">
