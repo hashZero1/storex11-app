@@ -9,12 +9,7 @@ export default function UserProfile({ signOutHandler }) {
   const reload = () => window.location.reload();
   return (
     <>
-      <Dropdown
-        inline
-        label={
-          <Avatar alt="User settings" img={currentUser.photoURL} rounded />
-        }
-      >
+      <Dropdown inline label={<Avatar img={currentUser.photoURL} rounded />}>
         <Dropdown.Header>
           <span className="block text-sm font-semibold">
             {currentUser.displayName}
@@ -23,8 +18,6 @@ export default function UserProfile({ signOutHandler }) {
             {currentUser.email}
           </span>
         </Dropdown.Header>
-        <Dropdown.Divider />
-
         <Link
           className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
           onClick={() => {
