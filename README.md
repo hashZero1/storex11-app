@@ -3,6 +3,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ### `WIP(work in progress)`
 ## Available Scripts
+### APP OVERVIEW
+
+https://github.com/hashZero1/storex11-app/assets/117970097/62124f5b-3019-496a-a9f7-2dc05e1bc22f
+
 
 In the project directory, you can run:
 
