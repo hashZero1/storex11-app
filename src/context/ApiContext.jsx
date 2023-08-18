@@ -33,6 +33,7 @@ export const ApiProvider = ({ children }) => {
       const response = await axios.get(
         `https://dummyjson.com/products/search?q=${searchProducts}`
       );
+      console.log(response.data);
       setsearchProducts(response.data);
     } catch (e) {
       alert("sorry item is not available");
