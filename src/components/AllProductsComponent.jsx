@@ -56,4 +56,4 @@ const AllProductsComponent = () => {
   );
 };
 
-export default memo(AllProductsComponent);
+export default AllProductsComponent;

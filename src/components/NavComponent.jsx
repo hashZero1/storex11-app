@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import CartContainer, { Cart } from "./CartComponent";
+import { Cart } from "./CartComponent";
 import { CartContext } from "../context/CartContext";
 import { AuthContext } from "../context/AuthContext";
 import {

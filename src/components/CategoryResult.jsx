@@ -17,7 +17,7 @@ export const CategoryResult = ({ category }) => {
               />
             </div>
 
-            <div className="h-60 p-5">
+            <div className="min-h-min p-5">
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-700">
                 {dt.title}
               </h5>
