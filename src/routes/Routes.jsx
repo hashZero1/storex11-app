@@ -1,13 +1,16 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import RootComponent from "../components/AllProductsComponent";
 import SearchResult from "../components/SearchResult";
+import OrderPlaced from "../components/OrderPlaced";
+import RootComponent from "../components/RootComponent";
 
 const Routers = () => {
   return (
     <Routes>
-      <Route index element={<RootComponent />} />
-      <Route path="/search/:id" element={<SearchResult />} />
+      <Route path="/" element={<RootComponent />}>
+        <Route path="/search/:name" element={<SearchResult />} />
+      </Route>
+      <Route path="/order" element={<OrderPlaced />} />
     </Routes>
   );
 };
