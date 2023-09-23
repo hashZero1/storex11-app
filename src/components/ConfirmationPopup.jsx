@@ -1,14 +1,25 @@
 import { Button, Modal } from "flowbite-react";
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
+
+
 export default function ConfirmationPopup() {
-  const { cartItems } = useContext(CartContext);
-  const [openModal, setOpenModal] = useState();
+  const { cartItems, dialogue } = useContext(CartContext);
+  const [openModal, setOpenModal] = useState(); 
   const props = { openModal, setOpenModal };
+  const navigate = useNavigate();
 
   const emptyCart = () => (cartItems.length = []);
+
+  const onSubmit = () => {
+    setTimeout(() => {
+   
+      navigate("/order");
+    }, 1500)
+  }
+
   return (
     <>
       <Button
@@ -27,19 +38,19 @@ export default function ConfirmationPopup() {
         <Modal.Body>
           <div className="text-center">
             <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-              Order Confirmation ?
+              {dialogue[0].head}
             </h3>
             <div className="flex justify-center gap-4">
-              <Link
-                to="/order"
+              <button
                 className="text-center py-2 w-40 text-white rounded-lg bg-red-600"
                 onClick={() => {
                   props.setOpenModal(undefined);
                   emptyCart();
+                  onSubmit();
                 }}
               >
                 Yes, I'm sure
-              </Link>
+              </button>
               <Button
                 color="gray"
                 onClick={() => props.setOpenModal(undefined)}
