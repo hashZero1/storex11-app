@@ -2,6 +2,10 @@ import { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const dialogue = [
+  { head: "Order Confirmation ?" },
+  { head: "You need to Login to Place Order" },
+];
 //helper to function to find the product
 //FUNCTION TO INCREASE ITEM FROM CART
 const addCartItem = (cartItems, productToAdd) => {
@@ -87,6 +91,7 @@ export const CartProvider = ({ children }) => {
     notify,
     removeItemToCart,
     deleteItemCart,
+    dialogue,
   };
   return <CartContext.Provider value={values}>{children}</CartContext.Provider>;
 };
