@@ -3,8 +3,6 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
-
-
 export default function ConfirmationPopup() {
   const { cartItems, dialogue } = useContext(CartContext);
   const [openModal, setOpenModal] = useState(); 
@@ -15,7 +13,6 @@ export default function ConfirmationPopup() {
 
   const onSubmit = () => {
     setTimeout(() => {
-   
       navigate("/order");
     }, 1500)
   }
