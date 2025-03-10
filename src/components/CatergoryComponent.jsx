@@ -30,29 +30,31 @@ const CatergoryComponent = () => {
   };
 
   return (
-    <div className="w-11/12 mx-auto mt-20 ">
-      <h1 className="text-4xl lg:text-6xl font-black text-gray-400 ml-14 mb-10">
-        Product categories
-      </h1>
-      <div className="pb-4 mx-auto lg:w-11/12 flex overflow-x-scroll yes-scrollbar">
-        {categories.map((dt) => (
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className={` ${
-              selectItem
-                ? "active:bg-blue-400 focus:bg-blue-700"
-                : "bg-blue-200 "
-            }
-           bg-blue-300 bg-opacity-50 capitalize rounded-lg m-1  px-4 py-2 text-md lg:m-2 lg:px-5 lg:py-4 lg:text-xl hover:bg-blue-500 hover:text-white whitespace-nowrap transition-all shadow-md `}
-            key={dt.id}
-            onClick={() => {
-              handleItemClick(dt);
-            }}
-          >
-            {dt}
-          </motion.button>
-        ))}
+    <div className=" mt-20 lg:w-[90%] 2xl:max-w-[102rem] mx-auto px-2 2xl:px-0">
+      <div>
+        <h1 className="text-4xl lg:text-6xl font-black text-gray-400  mb-10">
+          Product categories
+        </h1>
+        <div className="pb-4 mx-auto flex overflow-x-scroll yes-scrollbar">
+          {categories.map((dt) => (
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              className={` ${
+                selectItem
+                  ? "active:bg-blue-400 focus:bg-blue-700"
+                  : "bg-blue-200 "
+              }
+           bg-white shadow-md  capitalize rounded-lg m-1  px-4 py-2 text-md lg:mx-2 lg:px-5 lg:py-4 lg:text-xl hover:bg-blue-500 hover:text-white whitespace-nowrap transition-all `}
+              key={dt.id}
+              onClick={() => {
+                handleItemClick(dt);
+              }}
+            >
+              {dt}
+            </motion.button>
+          ))}
+        </div>
       </div>
       <div>
         {category ? (

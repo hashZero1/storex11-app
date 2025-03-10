@@ -32,7 +32,7 @@ const SearchComponent = () => {
   };
 
   return (
-    <section className="mt-14 lg:mt-20 lg:ml-12">
+    <section className="mt-20">
       <Combobox value={searchProducts} onChange={setsearchProducts}>
         <div className="relative mt-6 w-full">
           <Combobox.Input

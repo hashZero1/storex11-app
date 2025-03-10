@@ -12,18 +12,24 @@ const AllProductsComponent = () => {
   const { addItemToCart, notify } = useContext(CartContext);
   console.log("all products re-render");
   return (
-    <main className="w-11/12 mx-auto">
-      <SearchComponent />
-      <h1
-        className="text-4xl lg:text-6xl font-black text-gray-400 ml-14 mt-10 "
-        id="discover"
-      >
-        Trending Products
-      </h1>
-      <section className="flex mt-5 flex-wrap justify-center">
+    <main className=" lg:w-[90%] 2xl:max-w-[102rem] mx-auto px-2 2xl:px-0">
+      <div>
+        <SearchComponent />
+        <h1
+          className="text-4xl lg:text-6xl font-black text-gray-400  mt-10 "
+          id="discover"
+        >
+          Trending Products
+        </h1>
+      </div>
+      <section className="mt-10 grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 p-4 items-center md:p-2 ">
         {allProduct?.map((dt) => (
-          <motion.div whileHover={{ scale: 1.02 }} key={dt.id} className="p-2">
-            <div className="max-w-sm m-2 lg:m-0 2xl:m-2 bg-opacity-50 bg-white rounded-lg shadow ">
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            key={dt.id}
+            className=" bg-white rounded-lg w-full"
+          >
+            <div className="  bg-gray-50 rounded-lg shadow-md ">
               <div className="p-4 rounded-t-lg bg-white">
                 <img
                   className="w-full h-48 object-contain"
@@ -36,8 +42,7 @@ const AllProductsComponent = () => {
                   {dt.title}
                 </h5>
                 <p className="mb-3 h-[110px] font-normal text-gray-700 dark:text-gray-600">
-                  {dt.description} the biggest enterprise technology
-                  acquisitions of 2021 so far.
+                  {dt.description}
                 </p>
                 {/* <DetailsPageComponent product={dt} /> */}
                 <div className="mx-3 my-2 pt-6 border-t-2 border-black border-opacity-20 flex justify-between ">

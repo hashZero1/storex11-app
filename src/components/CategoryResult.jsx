@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 export const CategoryResult = ({ category }) => {
   const { addItemToCart, notify } = useContext(CartContext);
   return (
-    <div className="flex mt-10 flex-wrap justify-center">
+    <div className="mt-10 grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4  items-center md:p-2">
       {category?.map((dt) => (
-        <motion.div whileHover={{ scale: 1.02 }} key={dt.id} className="p-2">
-          <div className="max-w-sm m-2 lg:m-0 2xl:m-2 bg-opacity-50 bg-white rounded-lg shadow ">
+        <motion.div whileHover={{ scale: 1.02 }} key={dt.id} className="">
+          <div className=" bg-gray-50 rounded-lg shadow ">
             <div className="p-4 rounded-t-lg bg-white">
               <img
                 className="w-full h-48 object-contain"
@@ -21,8 +21,7 @@ export const CategoryResult = ({ category }) => {
                 {dt.title}
               </h5>
               <p className="mb-3 h-[110px] font-normal text-gray-700 dark:text-gray-600">
-                {dt.description} the biggest enterprise technology acquisitions
-                of 2021 so far.
+                {dt.description}
               </p>
               {/* <DetailsPageComponent product={dt} /> */}
               <div className="mx-3 my-2 pt-6 border-t-2 border-black border-opacity-20 flex justify-between ">

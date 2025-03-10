@@ -12,16 +12,16 @@ const handleScroll = () => {
 
 const HeroComponent = () => {
   return (
-    <section className="h-[90vh] m-10 ">
-      <div className=" flex flex-col justify-evenly items-center lg:flex-row  ">
-        <div className=" text-slate-800 lg:w-[50%]">
-          <h1 className=" text-4xl  xl:text-7xl font-extrabold text-[#06172E] ">
+    <section className="h-screen lg:h-[90vh] px-2 lg:px-0 lg:m-10 mt-24 xl:mt-0">
+      <div className=" flex flex-col justify-between lg:justify-evenly items-center lg:flex-row  ">
+        <div className="w-full text-slate-800 lg:w-[50%]">
+          <h1 className="text-4xl lg:text-5xl xl:text-7xl font-extrabold text-[#06172E] ">
             Welcome to,{" "}
             <span className="text-blue-700 text-6xl xl:text-7xl uppercase">
               store-X11
             </span>
           </h1>
-          <h2 className="mt-2 lg:mt-8 tracking-wide text-3xl lg:text-2xl text-[#06172e9b]  capitalize">
+          <h2 className="mt-2 lg:mt-8 tracking-wide text-lg lg:text-2xl text-[#06172e9b]  capitalize">
             your go-to destination for all your needs! We're here to provide you
             with everything you require in one convenient place.
           </h2>
@@ -32,7 +32,7 @@ const HeroComponent = () => {
             Browse Products
           </button>
         </div>
-        <div className="w-[50%]">
+        <div className="mt-10 lg:mt-0 w-full md:w-[90%] lg:w-[50%]">
           <Lottie animationData={heroAnim} />
         </div>
       </div>
