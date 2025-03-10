@@ -32,7 +32,7 @@ export const CategoryResult = ({ category }) => {
                     addItemToCart(dt);
                     notify();
                   }}
-                  className="px-4 py-2 bg-red-600 text-white font-semibold hover:bg-gray-800 hover:text-white transition-all rounded-lg"
+                  className="px-4 py-2 bg-blue-700 text-white font-semibold hover:bg-gray-800 hover:text-white transition-all rounded-lg"
                 >
                   Add To Cart
                 </button>

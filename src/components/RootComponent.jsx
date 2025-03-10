@@ -7,9 +7,12 @@ import CatergoryComponent from "./CatergoryComponent";
 
 const RootComponent = () => {
   return (
-    <section className="bg-gradient-to-r from-purple-200 via-red-300 to-orange-300 -z-40">
-      <NavComponent />
-      <HeroComponent />
+    <section className="">
+      <div className="bg-blue-300">
+        <NavComponent />
+        <HeroComponent />
+      </div>
+
       <AllProductsComponent />
       <CatergoryComponent />
       <FooterComponent />

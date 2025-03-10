@@ -44,7 +44,7 @@ const SearchComponent = () => {
           <Link
             onClick={() => searchCategory()}
             to={`/search/:${searchProducts}`}
-            className="px-4 py-2 lg:px-5 lg:py-3 text-xl bg-red-600 text-white font-semibold hover:bg-gray-800 hover:text-white lg:text-2xl rounded-tr-lg rounded-br-lg "
+            className="px-4 py-2 lg:px-5 lg:py-3 text-xl bg-blue-700 text-white font-semibold hover:bg-gray-800 hover:text-white lg:text-2xl rounded-tr-lg rounded-br-lg "
           >
             Search
           </Link>

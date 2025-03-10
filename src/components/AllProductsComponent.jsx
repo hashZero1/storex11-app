@@ -14,7 +14,10 @@ const AllProductsComponent = () => {
   return (
     <main className="w-11/12 mx-auto">
       <SearchComponent />
-      <h1 className="text-3xl ml-14 mt-10 font-semibold" id="discover">
+      <h1
+        className="text-4xl lg:text-6xl font-black text-gray-400 ml-14 mt-10 "
+        id="discover"
+      >
         Trending Products
       </h1>
       <section className="flex mt-5 flex-wrap justify-center">
@@ -44,7 +47,7 @@ const AllProductsComponent = () => {
                       addItemToCart(dt);
                       notify();
                     }}
-                    className="px-4 py-2 bg-red-600 text-white font-semibold hover:bg-gray-800 hover:text-white transition-all rounded-lg"
+                    className="px-4 py-2 bg-blue-700 text-white font-semibold hover:bg-gray-800 hover:text-white transition-all rounded-lg"
                   >
                     Add To Cart
                   </button>

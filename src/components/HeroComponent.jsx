@@ -1,5 +1,6 @@
 import React from "react";
-import HeroBG from "../Assets/hero-image.png";
+import heroAnim from "../Assets/heroAnim.json";
+import Lottie from "lottie-react";
 
 const handleScroll = () => {
   const nextSection = document.getElementById("discover");
@@ -11,27 +12,28 @@ const handleScroll = () => {
 
 const HeroComponent = () => {
   return (
-    <section className="xl:w-4/5 m-auto lg:h-[90vh]">
-      <div className="xl:mx-10 xl:mt-5 flex flex-col justify-between lg:flex-row  ">
-        <div className="mt-5 xl:mt-10 tracking-wider text-slate-800 w-11/12 m-auto">
-          <h1 className="mt-[60px] text-4xl lg:mt-[50px] 2xl:mt-[150px] xl:text-7xl font-extrabold ">
+    <section className="h-[90vh] m-10 ">
+      <div className=" flex flex-col justify-evenly items-center lg:flex-row  ">
+        <div className=" text-slate-800 lg:w-[50%]">
+          <h1 className=" text-4xl  xl:text-7xl font-extrabold text-[#06172E] ">
             Welcome to,{" "}
-            <span className="text-red-600 text-6xl xl:text-7xl uppercase">
+            <span className="text-blue-700 text-6xl xl:text-7xl uppercase">
               store-X11
             </span>
           </h1>
-          <h2 className="mt-2 lg:mt-8 text-3xl lg:text-5xl font-bold capitalize">
-            the only store you'll ever need...
+          <h2 className="mt-2 lg:mt-8 tracking-wide text-3xl lg:text-2xl text-[#06172e9b]  capitalize">
+            your go-to destination for all your needs! We're here to provide you
+            with everything you require in one convenient place.
           </h2>
           <button
             onClick={handleScroll}
-            className="mt-5 mb-10 px-5 py-2 xl:mt-10 xl:mb-0 xl:ml-2 xl:px-12 xl:py-4 rounded-full text-xl text-white font-semibold bg-red-600 hover:bg-gray-200 hover:text-black transition-all"
+            className="mt-5 mb-10 px-5 py-2 xl:mt-10 xl:mb-0 xl:ml-2 xl:px-12 xl:py-4 rounded-full text-xl text-white font-semibold bg-blue-700 hover:bg-gray-800  transition-all"
           >
             Browse Products
           </button>
         </div>
-        <div className="lg:mt-10 2xl:mt-20 w-11/12 xl:w-[70%]  m-auto">
-          <img src={HeroBG} alt="heroimage" />
+        <div className="w-[50%]">
+          <Lottie animationData={heroAnim} />
         </div>
       </div>
     </section>

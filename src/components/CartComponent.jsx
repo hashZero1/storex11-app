@@ -14,11 +14,11 @@ export const Cart = ({ toggle, handleToggle }) => {
       initial={{ opacity: 0, x: 200 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 200 }}
-      className="fixed w-screen h-screen -top-10 -right-5 lg:h-[90vh] lg:top-10 lg:left-[45em] 2xl:left-[79em] overflow-y-scroll no-scrollbar"
+      className="fixed w-screen h-screen -top-10 -right-5 lg:h-[90vh] lg:top-10 lg:left-[45em] 2xl:left-[79em] z-20 overflow-y-scroll no-scrollbar"
     >
       <div className="relative">
-        <div className="m-10 mt-10 p-4 left-0 absolute xl:mt-20 xl:absolute xl:-top-20 xl:left-[190px] xl:w-[400px] bg-red-100 bg-opacity-90 rounded-br-xl rounded-bl-xl transition-all shadow-md">
-          <div className="absolute p-2 top-0 left-0 xl:-left-14 lg:bg-red-100 bg-transparent opacity-90 rounded-tl-xl rounded-bl-xl">
+        <div className="m-10 mt-10 p-4 left-0 absolute xl:mt-20 xl:absolute xl:-top-20 xl:left-[190px] xl:w-[400px] bg-blue-100  rounded-br-xl rounded-bl-xl transition-all shadow-md">
+          <div className="absolute p-2 top-0 left-0 xl:-left-14 lg:bg-blue-100 bg-transparent  rounded-tl-xl rounded-bl-xl">
             <svg
               onClick={() => handleToggle(!toggle)}
               xmlns="http://www.w3.org/2000/svg"
@@ -37,13 +37,13 @@ export const Cart = ({ toggle, handleToggle }) => {
           </div>
           {cartItems.length === 0 ? (
             <div className="mt-10 text-xl" key={uuid()}>
-              <h1 className="p-2 mt-2 font-semibold text-xl">
+              <h1 className="p-2 mt-2 font-black text-xl text-gray-800">
                 {currentUser ? (
                   <h1 className="text-2xl">{currentUser.displayName}</h1>
                 ) : null}
                 Your StoreX-11 Cart is empty.
               </h1>
-              <p className="p-2">
+              <p className="p-2 text-gray-800">
                 Your shopping cart is waiting. Give it purpose – fill it with
                 groceries, clothing, household supplies, electronics and more.
               </p>
@@ -59,7 +59,7 @@ export const Cart = ({ toggle, handleToggle }) => {
 
                 return (
                   <div
-                    className="flex flex-col mx-2 my-4 p-2 bg-red-200 shadow-md rounded-xl"
+                    className="flex flex-col mx-2 my-4 p-2 bg-white shadow-md rounded-xl"
                     key={id}
                   >
                     <div className="flex">
@@ -77,26 +77,26 @@ export const Cart = ({ toggle, handleToggle }) => {
                       </div>
                     </div>
                     <div className="m-4 flex justify-evenly">
-                      <div class="flex flex-row bg-red-600 rounded-xl ">
+                      <div class="flex flex-row bg-blue-700 rounded-xl ">
                         <button
                           onClick={() => addItemToCart(item)}
-                          class=" bg-red-600 text-white hover:text-red-700 hover:bg-gray-100 w-12 rounded-l cursor-pointer"
+                          class=" bg-blue-700 text-white hover:text-blue-100 hover:bg-blue-400 w-12  rounded-l cursor-pointer"
                         >
-                          <span class="m-auto text-2xl font-thin">+</span>
+                          <span class=" text-2xl ">+</span>
                         </button>
-                        <span className="py-2 px-5 text-black font-semibold  bg-white">
+                        <span className="py-2 px-5 text-black font-semibold  bg-blue-100">
                           {quantity}
                         </span>
                         <button
                           onClick={() => removeItemToCart(item)}
-                          class="bg-red-600 text-white hover:text-red-700 hover:bg-gray-100 w-12 rounded-r cursor-pointer"
+                          class="bg-blue-700 text-white hover:text-blue-100 hover:bg-blue-400 w-12 rounded-r cursor-pointer"
                         >
-                          <span class="m-auto text-2xl font-thin">-</span>
+                          <span class="text-2xl">-</span>
                         </button>
                       </div>
                       <button
                         onClick={() => deleteItemCart(item)}
-                        className="px-5 bg-black text-white font-semibold hover:bg-gray-100 hover:text-black rounded-xl"
+                        className="px-5 bg-black text-white font-semibold hover:bg-gray-500  rounded-lg"
                       >
                         Delete
                       </button>

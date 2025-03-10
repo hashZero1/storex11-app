@@ -5,7 +5,7 @@ import { CartContext } from "../context/CartContext";
 
 export default function ConfirmationPopup() {
   const { cartItems, dialogue } = useContext(CartContext);
-  const [openModal, setOpenModal] = useState(); 
+  const [openModal, setOpenModal] = useState();
   const props = { openModal, setOpenModal };
   const navigate = useNavigate();
 
@@ -14,13 +14,13 @@ export default function ConfirmationPopup() {
   const onSubmit = () => {
     setTimeout(() => {
       navigate("/order");
-    }, 1500)
-  }
+    }, 1500);
+  };
 
   return (
     <>
       <Button
-        className="text-center py-2 w-40 m-auto text-lg text-white rounded-lg bg-red-600"
+        className="text-center py-2 w-40 m-auto text-lg text-white rounded-lg bg-blue-700"
         onClick={() => props.setOpenModal("pop-up")}
       >
         Place Order Now
@@ -39,7 +39,7 @@ export default function ConfirmationPopup() {
             </h3>
             <div className="flex justify-center gap-4">
               <button
-                className="text-center py-2 w-40 text-white rounded-lg bg-red-600"
+                className="text-center py-2 w-40 text-white rounded-lg bg-blue-700"
                 onClick={() => {
                   props.setOpenModal(undefined);
                   emptyCart();

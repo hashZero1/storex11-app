@@ -10,6 +10,7 @@ import {
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import UserProfile from "./UserProfile";
+import logo from "../Assets/logo.webp";
 
 const NavComponent = () => {
   const [toggle, setToggle] = useState(true);
@@ -31,14 +32,10 @@ const NavComponent = () => {
   };
 
   return (
-    <nav className="lg:w-11/12 mx-auto">
-      <div className="pt-10 max-w-screen-xl flex items-center justify-between mx-auto p-4">
+    <nav className="mx-5 lg:mx-10 pt-10 ">
+      <div className=" flex items-center justify-between">
         <a href="/" className="flex items-center">
-          <img
-            src="https://i.ibb.co/bPG5Y9K/logo-no-background.png"
-            className="h-8 my-1 xl:h-10 xl:mr-3"
-            alt="Logo"
-          />
+          <img src={logo} className="h-8 my-1 xl:h-10 xl:mr-3" alt="Logo" />
         </a>
         <div className="flex w-40 xl:w-56 justify-between">
           {currentUser ? (
@@ -46,7 +43,7 @@ const NavComponent = () => {
           ) : (
             <Link
               onClick={signInWithGoogle}
-              className="px-5 py-2 text-sm xl:text-base xl:px-10 xl:py-2 rounded-lg text-white font-semibold bg-red-600 hover:bg-gray-200 hover:text-black transition-all"
+              className="px-5 py-2 text-sm xl:text-base xl:px-10 xl:py-2 rounded-lg text-white font-semibold bg-blue-700 hover:bg-gray-800 hover:text-white transition-all"
               to="/"
             >
               SignIn

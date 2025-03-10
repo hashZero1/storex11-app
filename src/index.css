@@ -15,12 +15,7 @@
 
     html::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      background: linear-gradient(
-        180deg,
-        rgba(193, 87, 255, 1) 0%,
-        rgba(255, 23, 79, 1) 52%,
-        rgba(255, 171, 17, 1) 100%
-      );
+      background: #1650a0;
     }
 
     .yes-scrollbar::-webkit-scrollbar-track {
@@ -36,12 +31,7 @@
 
     .yes-scrollbar::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      background: linear-gradient(
-        90deg,
-        rgba(193, 87, 255, 1) 0%,
-        rgba(255, 23, 79, 1) 52%,
-        rgba(255, 171, 17, 1) 100%
-      );
+      background: #a4cafe;
     }
 
     /* Hide scrollbar for IE, Edge and Firefox */
@@ -55,9 +45,8 @@
 body {
   margin: 0;
   /* font-family: 'Ysabeau Office', sans-serif; */
-  font-family: -apple-system, BlinkMacSystemFont, "Ysabeau Office", "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
