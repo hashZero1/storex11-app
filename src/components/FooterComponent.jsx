@@ -3,7 +3,7 @@ import logo from "../Assets/logo.webp";
 
 const FooterComponent = () => {
   return (
-    <footer className="m-0 mt-20 bg-blue-200">
+    <footer className="m-0 p-3 mt-20 bg-blue-200">
       <div className="w-full max-w-screen-2xl mx-auto  md:py-12">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a href="#" className="flex items-center mb-4 sm:mb-0">
