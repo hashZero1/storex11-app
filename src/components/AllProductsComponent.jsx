@@ -1,20 +1,16 @@
-import React, { memo, useContext } from "react";
-import SearchComponent from "./SearchComponent";
+import React, { useContext } from "react";
 import { ApiContext } from "../context/ApiContext";
 import { CartContext } from "../context/CartContext";
 import { motion } from "framer-motion";
-import { Drawer } from "vaul";
 import { ToastContainer } from "react-toastify";
-import DetailsPageComponent from "./DetailsPageComponent";
 
 const AllProductsComponent = () => {
   const { allProduct } = useContext(ApiContext);
   const { addItemToCart, notify } = useContext(CartContext);
-  console.log("all products re-render");
+
   return (
     <main className=" lg:w-[90%] 2xl:max-w-[102rem] mx-auto px-2 2xl:px-0">
       <div>
-        <SearchComponent />
         <h1
           className="text-4xl lg:text-6xl font-black text-gray-400  mt-10 "
           id="discover"

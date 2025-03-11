@@ -7,9 +7,8 @@ import RootComponent from "../components/RootComponent";
 const Routers = () => {
   return (
     <Routes>
-      <Route path="/" element={<RootComponent />}>
-        <Route path="/search/:name" element={<SearchResult />} />
-      </Route>
+      <Route path="/" element={<RootComponent />} />
+      <Route path="/search/:name" element={<SearchResult />} />
       <Route path="/order" element={<OrderPlaced />} />
     </Routes>
   );

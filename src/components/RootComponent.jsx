@@ -4,6 +4,7 @@ import AllProductsComponent from "./AllProductsComponent";
 import FooterComponent from "./FooterComponent";
 import HeroComponent from "./HeroComponent";
 import CatergoryComponent from "./CatergoryComponent";
+import SearchBar from "./SearchBar";
 
 const RootComponent = () => {
   return (
@@ -12,7 +13,7 @@ const RootComponent = () => {
         <NavComponent />
         <HeroComponent />
       </div>
-
+      <SearchBar />
       <AllProductsComponent />
       <CatergoryComponent />
       <FooterComponent />

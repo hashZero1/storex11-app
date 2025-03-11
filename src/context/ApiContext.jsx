@@ -11,10 +11,22 @@ export const ApiContext = createContext();
 
 export const ApiProvider = ({ children }) => {
   const [allProduct, setProducts] = useState(null);
-  const [searchProducts, setsearchProducts] = useState([]);
   const [category, setCategory] = useState(null);
-
   const [selectItem, setSelectItem] = useState(null);
+  const [searchProducts, setSearchProducts] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(
+        `https://dummyjson.com/products/search?q=${searchQuery}`
+      );
+      console.log(response.data.products);
+      setSearchProducts(response.data.products);
+    } catch (e) {
+      alert("Sorry, item is not available");
+    }
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -27,19 +39,6 @@ export const ApiProvider = ({ children }) => {
     fetchData();
   }, []);
 
-  //for Search product
-  const searchCategory = async () => {
-    try {
-      const response = await axios.get(
-        `https://dummyjson.com/products/search?q=${searchProducts}`
-      );
-      console.log(response.data);
-      setsearchProducts(response.data);
-    } catch (e) {
-      alert("sorry item is not available");
-    }
-  };
-
   //for categories
   const fetchCategory = useMemo(async () => {
     const response = await axios.get(
@@ -51,9 +50,11 @@ export const ApiProvider = ({ children }) => {
 
   const value = {
     allProduct,
-    searchCategory,
+    searchQuery,
+    setSearchQuery,
+    handleSearch,
     searchProducts,
-    setsearchProducts,
+    setSearchProducts,
     category,
     fetchCategory,
     selectItem,
