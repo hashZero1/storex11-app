@@ -38,11 +38,11 @@ const SearchResult = () => {
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-700">
                   {dt.title}
                 </h5>
-                <p className="mb-3 h-[110px] font-normal text-gray-700 dark:text-gray-600">
-                  {dt.description}
+                <p className=" h-[110px] font-normal text-gray-700 dark:text-gray-600">
+                  {dt.description.slice(0, 150) + "..."}
                 </p>
-                {/* <DetailsPageComponent product={dt} /> */}
-                <div className="mx-3 my-2 pt-6 border-t-2 border-black border-opacity-20 flex justify-between ">
+                <hr className="py-2" />
+                <div className="mx-3 my-2 border-black border-opacity-20 flex justify-between ">
                   <p className="text-3xl text-gray-800">${dt.price} /-</p>
                   <button
                     onClick={() => {
