@@ -32,24 +32,28 @@ const NavComponent = () => {
   };
 
   return (
-    <nav className="mx-5 lg:mx-10 pt-10 ">
-      <div className=" flex items-center justify-between">
-        <a href="/" className="flex items-center">
-          <img src={logo} className="h-8 my-1 xl:h-10 xl:mr-3" alt="Logo" />
-        </a>
-        <div className="flex w-40 xl:w-56 justify-between">
-          {currentUser ? (
-            <UserProfile signOutHandler={signOutHandler} />
-          ) : (
-            <Link
-              onClick={signInWithGoogle}
-              className="px-5 py-2 text-sm xl:text-base xl:px-10 xl:py-2 rounded-lg text-white font-semibold bg-blue-700 hover:bg-gray-800 hover:text-white transition-all"
-              to="/"
-            >
-              SignIn
-            </Link>
-          )}
-          <div>
+    <nav className=" mx-5 lg:mx-10 pt-10 ">
+      <div className=" flex items-center justify-between relative">
+        <div className="w-44">
+          <a href="/">
+            <img src={logo} className="w-full" alt="Logo" />
+          </a>
+        </div>
+        <div className="flex w-[12%] justify-between items-center">
+          <div className="">
+            {currentUser ? (
+              <UserProfile signOutHandler={signOutHandler} />
+            ) : (
+              <Link
+                onClick={signInWithGoogle}
+                className="px-5 py-2 text-sm xl:text-base xl:px-10 xl:py-2 rounded-lg text-white font-semibold bg-blue-700 hover:bg-gray-800 hover:text-white transition-all"
+                to="/"
+              >
+                SignIn
+              </Link>
+            )}
+          </div>
+          <div className="relative">
             {toggle ? (
               <motion.div
                 initial={{ opacity: 0, x: 200 }}

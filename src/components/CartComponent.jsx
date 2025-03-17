@@ -14,11 +14,11 @@ export const Cart = ({ toggle, handleToggle }) => {
       initial={{ opacity: 0, x: 200 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 200 }}
-      className="fixed w-screen h-screen -top-10 -right-5 lg:h-[90vh] lg:top-10 lg:left-[45em] 2xl:left-[79em] z-20 overflow-y-scroll no-scrollbar"
+      className="fixed top-4 z-20 no-scrollbar right-4 overflow-y-scroll h-[97vh]"
     >
-      <div className="relative">
-        <div className="m-10 mt-10 p-4 left-0 absolute xl:mt-20 xl:absolute xl:-top-20 xl:left-[190px] xl:w-[400px] bg-blue-100  rounded-br-xl rounded-bl-xl transition-all shadow-md">
-          <div className="absolute p-2 top-0 left-0 xl:-left-14 lg:bg-blue-100 bg-transparent  rounded-tl-xl rounded-bl-xl">
+      <div className="relative ">
+        <div className="pt-2 lg:pt-0 p-4 w-[400px] bg-blue-100  rounded-br-xl rounded-bl-xl transition-all rounded-t-xl shadow-md">
+          <div className="fixed w-[inherit] p-2 top-4  right-4 bg-blue-100  rounded-xl">
             <svg
               onClick={() => handleToggle(!toggle)}
               xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@ export const Cart = ({ toggle, handleToggle }) => {
             </svg>
           </div>
           {cartItems.length === 0 ? (
-            <div className="mt-10 text-xl" key={uuid()}>
+            <div className="pt-1 text-xl" key={uuid()}>
               <h1 className="p-2 mt-2 font-black text-xl text-gray-800">
                 {currentUser ? (
                   <h1 className="text-2xl">{currentUser.displayName}</h1>
@@ -49,7 +49,7 @@ export const Cart = ({ toggle, handleToggle }) => {
               </p>
             </div>
           ) : (
-            <div className="pt-10 w-[74vw] xl:w-full">
+            <div className="pt-10 w-full">
               <div className="">
                 <Checkout />
               </div>
@@ -111,8 +111,3 @@ export const Cart = ({ toggle, handleToggle }) => {
     </m.aside>
   );
 };
-
-// motion.div initial={{y:"100%"}}
-//          animate={{y:"0%"}}
-//          transition={{duration:0.75, ease: "linear"}}
-//          exit={{opacity:1}}
