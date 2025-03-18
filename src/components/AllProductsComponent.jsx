@@ -34,9 +34,9 @@ const AllProductsComponent = () => {
                 />
               </div>
               <div className="min-h-min p-5">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-700">
+                <h1 className="mb-2 text-2xl font-bold tracking-tight text-gray-700">
                   {dt.title}
-                </h5>
+                </h1>
                 <p className=" h-[110px] font-normal text-gray-700 dark:text-gray-600">
                   {dt.description.slice(0, 150) + "..."}
                 </p>

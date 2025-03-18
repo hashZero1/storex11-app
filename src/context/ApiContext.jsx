@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { createContext, useEffect, useMemo, useState } from "react";
 import axios from "axios";
 
 export const ApiContext = createContext();
@@ -21,7 +15,7 @@ export const ApiProvider = ({ children }) => {
       const response = await axios.get(
         `https://dummyjson.com/products/search?q=${searchQuery}`
       );
-      console.log(response.data.products);
+
       setSearchProducts(response.data.products);
     } catch (e) {
       alert("Sorry, item is not available");
@@ -33,7 +27,7 @@ export const ApiProvider = ({ children }) => {
       const response = await axios.get(
         "https://dummyjson.com/products?limit=8"
       );
-      console.log(response.data);
+
       setProducts(response.data.products);
     }
     fetchData();

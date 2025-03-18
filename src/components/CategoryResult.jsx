@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 
 export const CategoryResult = ({ category }) => {
   const { addItemToCart, notify } = useContext(CartContext);
+
   return (
     <div className="mt-10 grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4  items-center md:p-2">
       {category?.map((dt) => (
-        <motion.div whileHover={{ scale: 1.02 }} key={dt.id} className="">
+        <motion.div whileHover={{ scale: 1.02 }} key={dt.id}>
           <div className=" bg-gray-50 rounded-lg shadow ">
             <div className="p-4 rounded-t-lg bg-white">
               <img
@@ -17,9 +18,9 @@ export const CategoryResult = ({ category }) => {
               />
             </div>
             <div className="min-h-min p-5">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-700">
+              <h1 className="mb-2 text-2xl font-bold tracking-tight text-gray-700">
                 {dt.title}
-              </h5>
+              </h1>
               <p className=" h-[110px] font-normal text-gray-700 dark:text-gray-600">
                 {dt.description.slice(0, 150) + "..."}
               </p>

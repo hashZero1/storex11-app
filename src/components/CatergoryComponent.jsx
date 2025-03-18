@@ -36,7 +36,7 @@ const CatergoryComponent = () => {
           Product categories
         </h1>
         <div className="pb-4 mx-auto flex overflow-x-scroll yes-scrollbar">
-          {categories.map((dt) => (
+          {categories.map((dt, index) => (
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.9 }}
@@ -46,7 +46,7 @@ const CatergoryComponent = () => {
                   : "bg-blue-200 "
               }
            bg-white shadow-md  capitalize rounded-lg m-1  px-4 py-2 text-md lg:mx-2 lg:px-5 lg:py-4 lg:text-xl hover:bg-blue-500 hover:text-white whitespace-nowrap transition-all `}
-              key={dt.id}
+              key={index}
               onClick={() => {
                 handleItemClick(dt);
               }}
