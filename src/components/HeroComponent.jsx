@@ -12,12 +12,12 @@ const handleScroll = () => {
 
 const HeroComponent = () => {
   return (
-    <section className="h-screen lg:h-[90vh] px-2 lg:px-0 lg:m-10 mt-24 xl:mt-0">
-      <div className=" flex flex-col justify-between lg:justify-evenly items-center lg:flex-row  ">
+    <section className="h-screen p-2 lg:p-5">
+      <div className="mt-16 lg:mt-5 flex flex-col justify-between lg:justify-evenly items-center lg:flex-row p-2">
         <div className="w-full text-slate-800 lg:w-[50%]">
-          <h1 className="text-4xl lg:text-5xl xl:text-7xl font-extrabold text-[#06172E] ">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-extrabold text-[#06172E] ">
             Welcome to,{" "}
-            <span className="text-blue-700 text-6xl xl:text-7xl uppercase">
+            <span className="text-blue-700 text-5xl md:text-6xl xl:text-7xl uppercase">
               store-X11
             </span>
           </h1>
@@ -32,7 +32,7 @@ const HeroComponent = () => {
             Browse Products
           </button>
         </div>
-        <div className="mt-10 lg:mt-0 w-full md:w-[90%] lg:w-[50%]">
+        <div className=" lg:mt-0 w-full md:w-[90%] lg:w-[50%] ">
           <Lottie animationData={heroAnim} />
         </div>
       </div>

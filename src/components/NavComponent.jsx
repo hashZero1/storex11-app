@@ -34,13 +34,13 @@ const NavComponent = () => {
   return (
     <nav className=" mx-5 lg:mx-10 pt-10 ">
       <div className=" flex items-center justify-between relative">
-        <div className="w-44">
+        <div className="w-32 lg:w-44">
           <a href="/">
             <img src={logo} className="w-full" alt="Logo" />
           </a>
         </div>
-        <div className="flex w-[12%] justify-between items-center">
-          <div className="">
+        <div className="flex w-[46%] justify-evenly sm:w-[24%] lg:w-[12%] md:justify-between items-center">
+          <div className="mr-[2px]">
             {currentUser ? (
               <UserProfile signOutHandler={signOutHandler} />
             ) : (
@@ -64,23 +64,18 @@ const NavComponent = () => {
                   cartItems.length
                     ? " bg-white"
                     : "ring-1 ring-gray-800 ring-inset"
-                } px-2 rounded-lg cursor-pointer flex justify-center hover:bg-white`}
+                } px-2.5 w-16 h-9 items-center rounded-lg cursor-pointer flex justify-center hover:bg-white`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="p-2 xl:p-1 w-10 h-10"
+                  fill="currentColor"
+                  className="size-6 p-1"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                  />
+                  <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
                 </svg>
-                <span className="font-bold  mt-[5px] xl:mt-2 text-lg xl:text-xl cursor- ">
+
+                <span className=" font-bold text-xl text-[#06172E]">
                   {cartItems.length}
                 </span>
               </motion.div>
