@@ -9,16 +9,30 @@ export const ApiProvider = ({ children }) => {
   const [selectItem, setSelectItem] = useState(null);
   const [searchProducts, setSearchProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [error, setError] = useState("");
 
   const handleSearch = async () => {
+    if (!searchQuery.trim()) {
+      setError("Please enter a valid product name.");
+      setSearchProducts([]);
+      return;
+    }
+
     try {
+      setError(""); // Clear any previous errors
       const response = await axios.get(
         `https://dummyjson.com/products/search?q=${searchQuery}`
       );
 
-      setSearchProducts(response.data.products);
+      if (response.data.products.length === 0) {
+        setError("No products found with this name. Try another search.");
+        setSearchProducts([]);
+      } else {
+        setSearchProducts(response.data.products);
+      }
     } catch (e) {
-      alert("Sorry, item is not available");
+      setError("Something went wrong. Please try again.");
+      setSearchProducts([]);
     }
   };
 
@@ -53,6 +67,7 @@ export const ApiProvider = ({ children }) => {
     fetchCategory,
     selectItem,
     setSelectItem,
+    error,
   };
   return <ApiContext.Provider value={value}>{children}</ApiContext.Provider>;
 };
