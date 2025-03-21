@@ -12,27 +12,30 @@ const handleScroll = () => {
 
 const HeroComponent = () => {
   return (
-    <section className="h-screen p-2 lg:p-5">
-      <div className="mt-16 lg:mt-5 flex flex-col justify-between lg:justify-evenly items-center lg:flex-row p-2">
-        <div className="w-full text-slate-800 lg:w-[50%]">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-extrabold text-[#06172E] ">
-            Welcome to,{" "}
-            <span className="text-blue-700 text-5xl md:text-6xl xl:text-7xl uppercase">
+    <section className="h-screen w-full p-4 lg:p-12 m-auto">
+      <div className=" flex flex-col justify-evenly lg:flex-row items-center lg:justify-between">
+        <div className="w-ful lg:w-[45%]">
+          <div className="flex flex-wrap items-baseline">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-[#06172E] ">
+              Welcome to,
+            </h1>
+            <h2 className="text-blue-700 text-5xl md:text-6xl xl:text-7xl font-black uppercase">
               store-X11
-            </span>
-          </h1>
-          <h2 className="mt-2 lg:mt-8 tracking-wide text-lg lg:text-2xl text-[#06172e9b]  capitalize">
-            your go-to destination for all your needs! We're here to provide you
-            with everything you require in one convenient place.
-          </h2>
+            </h2>
+          </div>
+          <p className="mt-2 lg:mt-5 tracking-wide text-lg lg:text-xl 2xl:text-2xl text-[#06172e9b]  capitalize">
+            your one-stop shop for all your needs! We’re excited to have you
+            here and can’t wait to help you find everything you’re looking for,
+            all in one convenient place. Enjoy your visit!
+          </p>
           <button
             onClick={handleScroll}
-            className="mt-5 mb-10 px-5 py-2 xl:mt-10 xl:mb-0 xl:ml-2 xl:px-12 xl:py-4 rounded-full text-xl text-white font-semibold bg-blue-700 hover:bg-gray-800  transition-all"
+            className="rounded-xl mt-6 py-3 px-8 lg:px-10 lg:py-5 lg:mt-10 text-xl text-white font-semibold bg-blue-700 hover:bg-gray-800  transition-all"
           >
             Browse Products
           </button>
         </div>
-        <div className=" lg:mt-0 w-full md:w-[90%] lg:w-[50%] ">
+        <div className="w-full lg:w-[52%]">
           <Lottie animationData={heroAnim} />
         </div>
       </div>

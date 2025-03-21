@@ -8,7 +8,7 @@ import SearchBar from "./SearchBar";
 
 const RootComponent = () => {
   return (
-    <section className="">
+    <section>
       <div className="bg-blue-300">
         <NavComponent />
         <HeroComponent />
