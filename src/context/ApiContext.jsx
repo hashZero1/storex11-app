@@ -6,7 +6,7 @@ export const ApiContext = createContext();
 export const ApiProvider = ({ children }) => {
   const [allProduct, setProducts] = useState(null);
   const [category, setCategory] = useState(null);
-  const [selectItem, setSelectItem] = useState(null);
+  const [selectItem, setSelectItem] = useState("mens-watches");
   const [searchProducts, setSearchProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [error, setError] = useState("");
@@ -50,7 +50,7 @@ export const ApiProvider = ({ children }) => {
   //for categories
   const fetchCategory = useMemo(async () => {
     const response = await axios.get(
-      `https://dummyjson.com/products/category/${selectItem || "mens-watches"}`
+      `https://dummyjson.com/products/category/${selectItem}`
     );
 
     setCategory(response.data.products);
